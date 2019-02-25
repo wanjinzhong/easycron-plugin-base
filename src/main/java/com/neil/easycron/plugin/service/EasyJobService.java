@@ -5,7 +5,7 @@ import java.util.Map;
 import com.neil.easycron.plugin.bo.JobRunningResult;
 import com.neil.easycron.plugin.exception.BizException;
 
-public interface JobService {
+public interface EasyJobService {
     /**
      * Get input stream from the configuration file template
      * @return input stream of the file template

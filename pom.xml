@@ -7,6 +7,13 @@
     <groupId>com.neil.easycron</groupId>
     <artifactId>easycron-plugin-base</artifactId>
     <version>0.1-SNAPSHOT</version>
+
+    <parent>
+        <groupId>org.sonatype.oss</groupId>
+        <artifactId>oss-parent</artifactId>
+        <version>7</version>
+    </parent>
+    
     <build>
         <plugins>
             <plugin>
@@ -20,5 +27,19 @@
         </plugins>
     </build>
 
+    <licenses>
+        <license>
+            <name>The Apache Software License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+    <developers>
+        <developer>
+            <name>Neil Wan</name>
+            <email>1051750377@qq.com</email>
+            <organization>Easy Cron</organization>
+        </developer>
+    </developers>
 
 </project>
