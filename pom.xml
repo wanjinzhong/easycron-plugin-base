@@ -41,5 +41,10 @@
             <organization>Easy Cron</organization>
         </developer>
     </developers>
-
+    <scm>
+        <tag>master</tag>
+        <url>git@github.com:wanjinzhong/easycron-plugin-base.git</url>
+        <connection>scm:git@github.com:wanjinzhong/easycron-plugin-base.git</connection>
+        <developerConnection>scm:git:git@github.com:wanjinzhong/easycron-plugin-base.git</developerConnection>
+    </scm>
 </project>
