@@ -1,10 +1,13 @@
-<!ELEMENT Config (Group|Item)+>
+<!ELEMENT Config (Group|Item|Items)+>
 <!ELEMENT Group (Item)+>
-<!ELEMENT Item (Option|#PCDATA)+>
+<!ELEMENT Item (#PCDATA)>
+<!ELEMENT Items (Option)+>
 <!ELEMENT Option (#PCDATA)>
 <!ATTLIST Group name CDATA #REQUIRED>
 <!ATTLIST Group seq CDATA #REQUIRED>
 <!ATTLIST Item name CDATA #REQUIRED>
 <!ATTLIST Item ID CDATA #REQUIRED>
 <!ATTLIST Item seq CDATA #REQUIRED>
-<!ATTLIST Item type (string|text|bool|multiple) "straing" #REQUIRED>
+<!ATTLIST Item type (string|text|bool) "string" #REQUIRED>
+<!ATTLIST Items value CDATA #REQUIRED>
+<!ATTLIST Option value CDATA #REQUIRED>
