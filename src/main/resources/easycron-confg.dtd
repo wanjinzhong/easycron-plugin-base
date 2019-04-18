@@ -1,5 +1,5 @@
 <!ELEMENT Config (Group|Item|Items)+>
-<!ELEMENT Group (Item)+>
+<!ELEMENT Group (Item|Items)+>
 <!ELEMENT Item (#PCDATA)>
 <!ELEMENT Items (Option)+>
 <!ELEMENT Option (#PCDATA)>
@@ -8,6 +8,12 @@
 <!ATTLIST Item name CDATA #REQUIRED>
 <!ATTLIST Item ID CDATA #REQUIRED>
 <!ATTLIST Item seq CDATA #REQUIRED>
-<!ATTLIST Item type (string|text|bool) "string" #REQUIRED>
+<!ATTLIST Item type (string|text|bool|integer|decimal|password) "string" #REQUIRED>
+<!ATTLIST Item max CDATA>
+<!ATTLIST Item min CDATA>
+<!ATTLIST Items ID CDATA #REQUIRED>
+<!ATTLIST Items name CDATA #REQUIRED>
+<!ATTLIST Items seq CDATA #REQUIRED>
 <!ATTLIST Items value CDATA #REQUIRED>
+<!ATTLIST Items type (single|multiple) 'single' #REQUIRED>
 <!ATTLIST Option value CDATA #REQUIRED>

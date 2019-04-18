@@ -1,9 +1,12 @@
 package com.neil.easycron.plugin.bo;
+import java.util.ArrayList;
+import java.util.List;
+
 import com.neil.easycron.plugin.constant.JobRunningStatus;
 
 public class JobRunningResult {
     private JobRunningStatus runningStatus;
-    private String message;
+    private List<SingleMessage> message = new ArrayList<>();
 
     public JobRunningStatus getRunningStatus() {
         return runningStatus;
@@ -13,11 +16,11 @@ public class JobRunningResult {
         this.runningStatus = runningStatus;
     }
 
-    public String getMessage() {
+    public List<SingleMessage> getMessage() {
         return message;
     }
 
-    public void setMessage(String message) {
+    public void setMessage(List<SingleMessage> message) {
         this.message = message;
     }
 }

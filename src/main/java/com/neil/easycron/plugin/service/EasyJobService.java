@@ -11,7 +11,10 @@ public interface EasyJobService {
      * @return input stream of the file template
      * @throws Exception exception
      */
-    InputStream getConfigFile() throws Exception;
+    default InputStream getConfigFile() throws Exception {
+        return this.getClass().getClassLoader().getResourceAsStream("config.xml");
+    }
+
 
     /**
      * Validate configuration file
@@ -25,14 +28,14 @@ public interface EasyJobService {
      *
      * @return result
      */
-    JobRunningResult serve();
+    JobRunningResult serve(Map<String, Object> configData);
 
     /**
      * test
      *
      * @return result
      */
-    JobRunningResult test();
+    JobRunningResult test(Map<String, Object> configData);
 
     /**
      * Get version of this plugin
