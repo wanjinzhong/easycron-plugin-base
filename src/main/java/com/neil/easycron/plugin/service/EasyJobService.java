@@ -1,10 +1,14 @@
 package com.neil.easycron.plugin.service;
 import java.io.InputStream;
+import java.util.List;
 import java.util.Map;
 
 import com.neil.easycron.plugin.bo.JobRunningResult;
+import com.neil.easycron.plugin.bo.SingleMessage;
+import com.neil.easycron.plugin.constant.JobRunningStatus;
 
 public interface EasyJobService {
+    ThreadLocal<List<SingleMessage>> messages =  new ThreadLocal<>();
     /**
      * Get input stream from the configuration file template
      *
@@ -12,9 +16,11 @@ public interface EasyJobService {
      * @throws Exception exception
      */
     default InputStream getConfigFile() throws Exception {
-        return this.getClass().getClassLoader().getResourceAsStream("config.xml");
+        return getConfigFile("config.xml");
     }
-
+    default InputStream getConfigFile(String fileName) throws Exception {
+        return this.getClass().getClassLoader().getResourceAsStream(fileName);
+    }
 
     /**
      * Validate configuration file
@@ -28,7 +34,21 @@ public interface EasyJobService {
      *
      * @return result
      */
-    JobRunningResult serve(Map<String, Object> configData);
+    JobRunningStatus serve(Map<String, Object> configData);
+
+    /**
+     * call with log
+     *
+     * @return result
+     */
+    default JobRunningResult call(Map<String, Object> configData){
+        JobRunningStatus result = serve(configData);
+        JobRunningResult runningResult = new JobRunningResult();
+        runningResult.setRunningStatus(result);
+        runningResult.setMessage(messages.get());
+        messages.remove();
+        return runningResult;
+    }
 
     /**
      * test
