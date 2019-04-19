@@ -6,6 +6,7 @@ import java.util.Map;
 import com.neil.easycron.plugin.bo.JobRunningResult;
 import com.neil.easycron.plugin.bo.SingleMessage;
 import com.neil.easycron.plugin.constant.JobRunningStatus;
+import com.neil.easycron.plugin.util.EasyLogger;
 
 public interface EasyJobService {
     ThreadLocal<List<SingleMessage>> messages =  new ThreadLocal<>();
@@ -42,7 +43,18 @@ public interface EasyJobService {
      * @return result
      */
     default JobRunningResult call(Map<String, Object> configData){
-        JobRunningStatus result = serve(configData);
+        JobRunningStatus result;
+        try {
+            result = serve(configData);
+        } catch (Exception e) {
+            result = JobRunningStatus.FAILED;
+            StringBuilder builder = new StringBuilder();
+            builder.append(e.getClass().getName()).append(": ").append(e.getMessage()).append("\r\n");
+            for (StackTraceElement element : e.getStackTrace()) {
+                builder.append("\t").append(element).append("\r\n");
+            }
+            EasyLogger.fatal(builder.toString());
+        }
         JobRunningResult runningResult = new JobRunningResult();
         runningResult.setRunningStatus(result);
         runningResult.setMessage(messages.get());
