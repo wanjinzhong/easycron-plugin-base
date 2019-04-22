@@ -10,7 +10,7 @@
 
         <name>EasyCron Plugin Base</name>
         <description>Base Service for Easy Cron</description>
-        <url>https://github.com/wanjinzhong/EasyCron</url>
+        <url>https://github.com/wanjinzhong/easycron-plugin-base</url>
 
         <licenses>
             <license>
@@ -29,9 +29,9 @@
         </developers>
 
         <scm>
-            <connection>scm:git:git@github.com:wanjinzhong/EasyCron.git</connection>
-            <developerConnection>scm:git:git@git.oschina.net:songxinqiang/OSSParent.git</developerConnection>
-            <url>git@git.oschina.net:songxinqiang/OSSParent.git</url>
+            <connection>scm:git:git@github.com:wanjinzhong/easycron-plugin-base.git</connection>
+            <developerConnection>scm:git:git@github.com:wanjinzhong/easycron-plugin-base.git</developerConnection>
+            <url>git@github.com:wanjinzhong/easycron-plugin-base.git</url>
         </scm>
 
         <properties>
