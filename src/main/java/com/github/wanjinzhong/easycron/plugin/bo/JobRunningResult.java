@@ -1,8 +1,8 @@
-package com.neil.easycron.plugin.bo;
+package com.github.wanjinzhong.easycron.plugin.bo;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.neil.easycron.plugin.constant.JobRunningStatus;
+import com.github.wanjinzhong.easycron.plugin.constant.JobRunningStatus;
 
 public class JobRunningResult {
     private JobRunningStatus runningStatus;

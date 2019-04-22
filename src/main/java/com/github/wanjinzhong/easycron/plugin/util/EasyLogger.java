@@ -1,10 +1,10 @@
-package com.neil.easycron.plugin.util;
+package com.github.wanjinzhong.easycron.plugin.util;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.neil.easycron.plugin.bo.SingleMessage;
-import com.neil.easycron.plugin.constant.LogLevel;
-import com.neil.easycron.plugin.service.EasyJobService;
+import com.github.wanjinzhong.easycron.plugin.bo.SingleMessage;
+import com.github.wanjinzhong.easycron.plugin.constant.LogLevel;
+import com.github.wanjinzhong.easycron.plugin.service.EasyJobService;
 
 public class EasyLogger {
     public static void log(LogLevel level, String message) {

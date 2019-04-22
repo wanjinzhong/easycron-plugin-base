@@ -1,12 +1,12 @@
-package com.neil.easycron.plugin.service;
+package com.github.wanjinzhong.easycron.plugin.service;
 import java.io.InputStream;
 import java.util.List;
 import java.util.Map;
 
-import com.neil.easycron.plugin.bo.JobRunningResult;
-import com.neil.easycron.plugin.bo.SingleMessage;
-import com.neil.easycron.plugin.constant.JobRunningStatus;
-import com.neil.easycron.plugin.util.EasyLogger;
+import com.github.wanjinzhong.easycron.plugin.bo.SingleMessage;
+import com.github.wanjinzhong.easycron.plugin.constant.JobRunningStatus;
+import com.github.wanjinzhong.easycron.plugin.util.EasyLogger;
+import com.github.wanjinzhong.easycron.plugin.bo.JobRunningResult;
 
 public interface EasyJobService {
     ThreadLocal<List<SingleMessage>> messages =  new ThreadLocal<>();

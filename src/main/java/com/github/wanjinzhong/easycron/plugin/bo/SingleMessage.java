@@ -1,7 +1,7 @@
-package com.neil.easycron.plugin.bo;
+package com.github.wanjinzhong.easycron.plugin.bo;
 import java.util.Calendar;
 
-import com.neil.easycron.plugin.constant.LogLevel;
+import com.github.wanjinzhong.easycron.plugin.constant.LogLevel;
 
 public class SingleMessage {
     private Calendar time;
