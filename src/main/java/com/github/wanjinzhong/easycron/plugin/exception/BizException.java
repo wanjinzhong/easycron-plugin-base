@@ -1,4 +1,4 @@
-package com.neil.easycron.plugin.exception;
+package com.github.wanjinzhong.easycron.plugin.exception;
 public class BizException extends RuntimeException {
     public BizException() {
     }
